@@ -162,13 +162,13 @@ The role matching module ranks candidates according to their suitability for a s
 
 The top candidates section highlights the highest-ranked candidates based on the system's ATS scoring and role-fit evaluation.
 
-![Top Candidates](images/top-candidates.png)
+![Top Candidates](images/Top-candidates.png)
 
 ### 5. Recruitment Analytics
 
 The analytics section provides visual insights into candidate quality, ATS scores, role alignment, and recruitment trends.
 
-![Recruitment Analytics](images/analytics.png)
+![Recruitment Analytics](images/Analytics.png)
 
 ### Executive Dashboard
 
