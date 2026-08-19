@@ -1,362 +1,329 @@
-# TalentBridge Solutions – Resume Screening & Role Matching using NLP
+# Resume Screening & ATS Role Matching using NLP
 
-> **Enterprise-Style AI-Powered Applicant Tracking System (ATS) Prototype for Automated Resume Screening and Candidate Ranking**
+> An end-to-end Data Science and NLP solution for automated resume screening, candidate-role matching, ATS scoring, and recruiter analytics.
 
----
-
-# Project Overview
-
-The recruitment process in modern organizations involves screening thousands of resumes for multiple job openings. Manual resume screening is time-consuming, inconsistent, and often depends heavily on keyword matching, which can overlook highly qualified candidates.
-
-This project presents an **Enterprise Resume Screening and Role Matching System** developed for **TalentBridge Solutions Pvt. Ltd.** The solution demonstrates how **Natural Language Processing (NLP)** and **business-driven ATS scoring** can automate candidate evaluation and improve hiring efficiency.
-
-The project combines:
-
-- Data Validation
-- Feature Engineering
-- TF-IDF based NLP Similarity
-- Hybrid ATS Scoring
-- Candidate Ranking
-- Streamlit Dashboard
-
-to create an end-to-end recruitment analytics solution.
+**Author:** Sahil Uniyal
+**Project Type:** Data Science / NLP Capstone
+**Application:** Streamlit
 
 ---
 
-# Business Problem
+## 📌 Project Overview
 
-TalentBridge Solutions receives thousands of resumes from applicants applying to different technology and business roles.
+Recruiters often receive thousands of resumes for a single hiring cycle, making manual screening time-consuming and inconsistent.
 
-Recruiters face several operational challenges:
+This project develops an enterprise-style **Resume Screening and Role Matching System** that combines **Natural Language Processing (NLP), feature engineering, TF-IDF, cosine similarity, and a hybrid ATS scoring engine** to evaluate candidates and identify the best-fit profiles for different job roles.
 
-- Manual resume screening requires significant time.
-- Keyword-based ATS systems fail to understand contextual skills.
-- Different recruiters may shortlist candidates differently.
-- High recruitment workload delays hiring.
-- Candidate-job alignment is difficult to evaluate objectively.
-
-The organization required an intelligent system capable of automatically evaluating candidate resumes, matching them with enterprise job roles, and producing explainable recruiter recommendations.
+The system processes **5,000 candidate profiles with 34 structured resume attributes**, engineers **15+ business-driven features**, evaluates candidates across **5 enterprise roles**, and generates recruiter-friendly recommendations through an interactive Streamlit dashboard.
 
 ---
 
-# Project Objectives
+## 🎯 Business Problem
 
-The primary objectives of this project are:
+Traditional resume screening can suffer from:
 
-- Automate resume screening.
-- Reduce recruiter workload.
-- Improve candidate-role matching.
-- Generate ATS-style fit scores.
-- Rank candidates based on multiple business factors.
-- Build an interactive recruiter dashboard.
-- Demonstrate the use of NLP in recruitment analytics.
+* High manual screening effort
+* Keyword-only matching
+* Inconsistent candidate evaluation
+* Difficulty comparing candidates across different roles
+* Longer hiring cycles
 
----
-
-# Dataset Overview
-
-The project uses the provided **parsed_resumes.csv** dataset consisting of:
-
-- **5000 Candidate Profiles**
-- **34 Structured Resume Attributes**
-
-The dataset contains information such as:
-
-- Candidate ID
-- Resume Metadata
-- Technical Skills
-- Tools & Platforms
-- Soft Skills
-- Experience Summary
-- Project Summary
-- Education Details
-- Domain
-- Role
-- Leadership Indicators
-- ATS Quality Indicators
-- Resume Completeness Score
-- Keyword Density Score
-
-A separate **Data Definition.xlsx** file was used to understand every column before performing preprocessing and analysis.
+The goal of this project is to provide recruiters with an **explainable, data-driven decision-support system** for faster and more consistent candidate screening.
 
 ---
 
-# Technology Stack
+## 🚀 Key Features
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Core Programming |
-| Pandas | Data Processing |
-| NumPy | Numerical Operations |
-| Scikit-learn | TF-IDF & Cosine Similarity |
-| NLTK | Text Cleaning |
-| Streamlit | Dashboard |
-| Plotly | Interactive Charts |
-| Matplotlib | Visualizations |
-| JSON | Role Definitions |
+* Automated resume data validation and preprocessing
+* Feature engineering for candidate evaluation
+* NLP-based resume-to-role matching
+* TF-IDF vectorization
+* Cosine similarity scoring
+* Hybrid ATS Fit Score
+* Candidate ranking
+* Role-specific candidate recommendations
+* Recruiter-friendly recommendation categories
+* Interactive Streamlit dashboard
+* Recruitment analytics and visualizations
+* Automated validation and ranking reports
 
 ---
 
-# Project Workflow
+## 📊 Project Scale
 
-```
-Resume Dataset
-       │
-       ▼
-Data Validation
-       │
-       ▼
-Data Cleaning
-       │
-       ▼
-Feature Engineering
-       │
-       ▼
-Enterprise Job Role Creation
-       │
-       ▼
-NLP Processing
-       │
-       ▼
+| Metric                    |                      Value |
+| ------------------------- | -------------------------: |
+| Candidate Profiles        |                      5,000 |
+| Resume Attributes         |                         34 |
+| Engineered Features       |                        15+ |
+| Enterprise Roles          |                          5 |
+| Recommendation Categories |                          4 |
+| Dashboard                 |                  Streamlit |
+| NLP Technique             | TF-IDF + Cosine Similarity |
+
+---
+
+## 💼 Enterprise Roles
+
+The system evaluates candidates against five manually defined enterprise roles:
+
+1. Data Scientist
+2. Data Analyst
+3. Machine Learning Engineer
+4. Business Analyst
+5. Cloud Data Engineer
+
+Each role contains relevant skills, experience expectations, certifications, domain preferences, and leadership requirements.
+
+---
+
+## 🧠 NLP & ATS Methodology
+
+The project uses a hybrid approach instead of relying only on keyword matching.
+
+### NLP Pipeline
+
+```text
+Resume Data
+    ↓
+Text Cleaning
+    ↓
+Text Normalization
+    ↓
 TF-IDF Vectorization
-       │
-       ▼
+    ↓
 Cosine Similarity
-       │
-       ▼
-Hybrid ATS Scoring
-       │
-       ▼
-Candidate Ranking
-       │
-       ▼
-Recruiter Dashboard
+    ↓
+Resume-to-Role Similarity
 ```
 
----
+### Hybrid ATS Scoring
 
-# Data Validation
+The final candidate evaluation combines multiple business factors:
 
-Before building the NLP model, the dataset underwent comprehensive validation.
+* Technical Skill Match
+* Experience Match
+* Project Relevance
+* Education Strength
+* ATS Readiness
+* Leadership Capability
 
-The following quality checks were performed:
-
-- Missing Value Analysis
-- Duplicate Candidate Detection
-- Resume Completeness Validation
-- Experience Consistency Checks
-- Education Standardization
-- Skill Normalization
-- Keyword Density Validation
-- Profile Completeness Validation
-
-After preprocessing:
-
-- Total Candidates: **5000**
-- Duplicate Candidate IDs: **0**
-- Missing Values: **0**
-
-This ensured that the dataset was reliable before feature engineering and modeling.
+This produces an explainable **ATS Fit Score** used for candidate ranking and recommendation.
 
 ---
 
-# Feature Engineering
+## ⚙️ Feature Engineering
 
-One of the major strengths of this project is the creation of business-driven engineered features.
+The system creates business-oriented features including:
 
-The following features were created:
+* Resume Quality Score
+* ATS Readiness Score
+* Technical Strength Score
+* Leadership Score
+* Domain Alignment Score
+* Project Relevance Score
+* Certification Strength Score
+* Experience Bucket
+* Skill Density Score
+* Role Readiness Score
+* Career Progression Score
+* Education Strength Score
+* Professional Maturity Score
+* Candidate Quality Index
 
-- Resume Quality Score
-- ATS Readiness Score
-- Technical Strength Score
-- Leadership Score
-- Domain Alignment Score
-- Project Relevance Score
-- Certification Strength Score
-- Experience Bucket
-- Skill Density Score
-- Role Readiness Score
-- Career Progression Score
-- Education Strength Score
-- Professional Maturity Score
-- Candidate Quality Index
-
-These engineered features transform raw resume information into meaningful business indicators that improve candidate evaluation.
+These features transform raw resume information into measurable indicators for recruitment analytics.
 
 ---
 
-# Enterprise Job Roles
+## 🖥️ Streamlit Dashboard
 
-Since the dataset did not include Job Descriptions, five realistic enterprise roles were designed manually:
+The application provides an interactive recruiter dashboard with:
+## 📸 Application Screenshots
 
-- Data Scientist
-- Data Analyst
-- Machine Learning Engineer
-- Business Analyst
-- Cloud Data Engineer
+### 1. Executive Dashboard
 
-Each role contains:
+The executive dashboard provides an overview of the candidate pool, ATS performance, role distribution, and key recruitment metrics.
 
-- Mandatory Skills
-- Optional Skills
-- Experience Requirements
-- Certifications
-- Domain Preferences
-- Leadership Expectations
+![Executive Dashboard](images/dashboard.png)
 
-This enables realistic resume-to-role matching similar to enterprise ATS platforms.
+### 2. Candidate Search
 
----
+The candidate search interface allows recruiters to search and explore candidate profiles based on relevant attributes.
 
-# NLP Pipeline
+![Candidate Search](images/candidate-search.png)
 
-The project applies Natural Language Processing (NLP) to compare resumes with enterprise job descriptions.
+### 3. Role Matching
 
-The pipeline includes:
+The role matching module ranks candidates according to their suitability for a selected enterprise role.
 
-1. Text Cleaning
-2. Lowercase Conversion
-3. Stopword Removal
-4. Tokenization
-5. TF-IDF Vectorization
-6. Cosine Similarity
+![Role Matching](images/role-matching.png)
 
-TF-IDF converts resume text into numerical vectors.
+### 4. Top Candidates
 
-Cosine Similarity measures the similarity between candidate resumes and enterprise role descriptions.
+The top candidates section highlights the highest-ranked candidates based on the system's ATS scoring and role-fit evaluation.
 
-Higher similarity scores indicate better candidate-role alignment.
+![Top Candidates](images/top-candidates.png)
 
----
+### 5. Recruitment Analytics
 
-# Hybrid ATS Scoring Engine
+The analytics section provides visual insights into candidate quality, ATS scores, role alignment, and recruitment trends.
 
-Unlike traditional keyword-based ATS systems, this project combines multiple business factors.
-
-The final candidate score is calculated using:
-
-- Skill Match
-- Experience Match
-- Project Relevance
-- Education Match
-- ATS Readiness
-- Leadership Score
-
-This hybrid approach provides a more balanced and explainable candidate evaluation process.
-
----
-
-# Candidate Classification
-
-Candidates are classified into four categories:
-
-- Highly Recommended
-- Recommended
-- Consider
-- Not Suitable
-
-The classification is based on the final ATS Fit Score.
-
----
-
-# Dashboard Features
-
-The Streamlit dashboard contains five interactive sections.
+![Recruitment Analytics](images/analytics.png)
 
 ### Executive Dashboard
 
-Displays:
-
-- Total Candidates
-- Highest Fit Score
-- Average Fit Score
-- Distribution of ATS Scores
-- Role Allocation
-
----
+* Total candidates
+* Average ATS score
+* Highest-fit candidates
+* ATS score distribution
+* Role allocation
 
 ### Candidate Search
 
-Allows recruiters to search candidates using:
+Search and explore candidates using:
 
-- Candidate Name
-- Primary Role
-- Domain
-
----
+* Candidate name
+* Primary role
+* Domain
 
 ### Role Matching
 
-Allows recruiters to:
-
-- Select a target role
-- View the highest-ranked candidates
-- Compare ATS scores
-
----
+Select a target enterprise role and view the highest-ranked candidates.
 
 ### Top Candidates
 
-Displays the highest-ranked candidates across all roles.
-
----
+View the strongest candidates across the evaluated roles.
 
 ### Analytics
 
-Provides:
-
-- Feature Importance
-- Engineered ATS Metrics
-- Candidate Quality Distribution
-- Experience vs Candidate Quality Index
+Explore candidate quality, ATS metrics, feature importance, and recruitment trends.
 
 ---
 
-# Project Outputs
+## 📁 Project Structure
 
-The project generates:
-
-- Ranked Candidate List
-- Validation Report
-- Role Definitions
-- Recruiter Dashboard
-- Business Report
-- Documentation
-- Presentation Material
-
----
-
-# Future Improvements
-
-The current project can be extended by integrating:
-
-- Resume PDF Parsing
-- BERT Embeddings
-- Sentence Transformers
-- Large Language Models (LLMs)
-- Real Enterprise Job Descriptions
-- Recruiter Feedback Learning
-- Explainable AI (XAI)
-- Cloud Deployment
+```text
+resume-screening-ats-capstone/
+│
+├── src/
+│   ├── ats_pipeline.py
+│   └── role_catalog.py
+│
+├── outputs/
+│   ├── ranked_candidates.csv
+│   ├── role_definitions.json
+│   └── validation_report.csv
+│
+├── app.py
+├── parsed_resumes.csv
+├── resume_screening_capstone.ipynb
+├── Data Definition (3).xlsx
+├── business_report.md
+├── Resume-Screening-and-Role-Matching-using-NLP.pdf
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
 
 ---
 
-# Conclusion
+## 🛠️ Technology Stack
 
-This project demonstrates how NLP and business-driven feature engineering can significantly improve the resume screening process.
-
-Instead of relying only on keyword matching, the system combines technical skills, experience, education, leadership indicators, ATS quality metrics, and semantic text similarity to produce explainable candidate rankings.
-
-The solution provides recruiters with a scalable, transparent, and enterprise-style ATS prototype capable of improving hiring efficiency and decision-making.
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Scikit-learn**
+* **NLTK**
+* **TF-IDF**
+* **Cosine Similarity**
+* **Streamlit**
+* **Plotly**
+* **Matplotlib**
+* **JSON**
+* **Feature Engineering**
+* **HR / Recruitment Analytics**
 
 ---
 
-# Author
+## ▶️ How to Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Sahiluniyal/resume-screening-ats-capstone.git
+```
+
+### 2. Navigate into the project
+
+```bash
+cd resume-screening-ats-capstone
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+The application will open locally in your browser.
+
+---
+
+## 📈 Project Outputs
+
+The system generates:
+
+* Ranked candidate results
+* Validation reports
+* Enterprise role definitions
+* Recruitment analytics
+* Business analysis documentation
+* Interactive dashboard outputs
+
+---
+
+## 🔮 Future Improvements
+
+Possible extensions include:
+
+* Resume PDF parsing
+* Transformer-based embeddings
+* Sentence Transformers
+* BERT-based semantic matching
+* Real enterprise job descriptions
+* Recruiter feedback learning
+* Explainable AI techniques
+* Cloud-based deployment
+* Production ATS integration
+
+---
+
+## 📄 Project Documentation
+
+Detailed project documentation is available in:
+
+* `business_report.md`
+* `Resume-Screening-and-Role-Matching-using-NLP.pdf`
+* `resume_screening_capstone.ipynb`
+
+---
+
+## 👨‍💻 Author
 
 **Sahil Uniyal**
 
-B.Tech Computer Science & Engineering
+B.Tech — Computer Science & Engineering
 
-Data Science & Machine Learning Enthusiast
+Data Science | Machine Learning | NLP | Data Analytics
 
-Capstone Project – Career247 Data Science and machine learning with GenAI
+---
+
+## ⭐ Project
+
+If you find this project useful, feel free to explore the repository and review the implementation.
