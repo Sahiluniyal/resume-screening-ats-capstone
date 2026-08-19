@@ -1,0 +1,42 @@
+ROLE_DEFINITIONS = {
+    'Data Scientist': {
+        'mandatory_skills': ['python', 'sql', 'machine learning', 'statistics', 'pandas', 'numpy', 'nlp'],
+        'optional_skills': ['tensorflow', 'power bi', 'azure', 'aws', 'tableau'],
+        'experience_requirement': '3+ years in analytics, experimentation, or predictive modeling',
+        'certifications': ['AWS Machine Learning', 'TensorFlow Developer', 'Azure AI Fundamentals'],
+        'domain_preference': 'Data Science, ML, analytics-driven products',
+        'leadership_requirement': 'Ability to work with stakeholders and explain models to business users',
+    },
+    'Data Analyst': {
+        'mandatory_skills': ['sql', 'power bi', 'excel', 'dashboard', 'analytics', 'pandas'],
+        'optional_skills': ['python', 'tableau', 'etl', 'business intelligence'],
+        'experience_requirement': '2+ years in reporting, dashboarding, or business analytics',
+        'certifications': ['Power BI Data Analyst', 'Tableau Desktop Specialist'],
+        'domain_preference': 'Business intelligence, finance, operations',
+        'leadership_requirement': 'Strong stakeholder communication and insight storytelling',
+    },
+    'Machine Learning Engineer': {
+        'mandatory_skills': ['python', 'machine learning', 'nlp', 'tensorflow', 'pytorch', 'docker', 'aws'],
+        'optional_skills': ['kubernetes', 'mlops', 'azure', 'git', 'scikit-learn'],
+        'experience_requirement': '4+ years in model development, deployment, and experimentation',
+        'certifications': ['AWS Certified Machine Learning', 'Azure AI Engineer'],
+        'domain_preference': 'AI products, GenAI, infra and inference systems',
+        'leadership_requirement': 'Ownership of model lifecycle and collaboration with engineering teams',
+    },
+    'Business Analyst': {
+        'mandatory_skills': ['business analysis', 'stakeholder management', 'requirements', 'documentation', 'sql'],
+        'optional_skills': ['agile', 'jira', 'process mapping', 'power bi'],
+        'experience_requirement': '3+ years in requirement gathering and process analysis',
+        'certifications': ['CBAP', 'PMI-PBA'],
+        'domain_preference': 'Consulting, operations, enterprise transformation',
+        'leadership_requirement': 'Strong facilitation and cross-functional alignment',
+    },
+    'Cloud Data Engineer': {
+        'mandatory_skills': ['sql', 'python', 'aws', 'azure', 'data pipelines', 'etl', 'kubernetes'],
+        'optional_skills': ['spark', 'docker', 'data warehouse', 'dbt'],
+        'experience_requirement': '4+ years in cloud-native data platforms and pipelines',
+        'certifications': ['AWS Data Engineer', 'Azure Data Engineer Associate'],
+        'domain_preference': 'Cloud infrastructure, data platform modernisation',
+        'leadership_requirement': 'Ability to own data platform delivery and governance',
+    },
+}
